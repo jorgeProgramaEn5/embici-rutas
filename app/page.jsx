@@ -10,7 +10,7 @@ export default async function IndexPage() {
   const data = await fetchUsers();
   const user = data.data;
   return (
-    <div>
+    <div className=' flex justify-center bg-gray-dark pt-[20px]'>
       <Users users={user}/>
     </div>
   )
