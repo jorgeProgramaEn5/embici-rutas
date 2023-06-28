@@ -9,13 +9,15 @@ export default async function UserPage({params}) {
   const user = await getUsers(params.id)
 
   return (
-    <div>
-      <h1>User Details</h1>
-      <div>
-        <img src={user.avatar} alt={`avatar-${user.id}`} />
-        <div>
-            <h2>{`${user.first_name} ${user.last_name}`}</h2>
-            <p>{user.email}</p>
+    <div className=" w-full min-h-screen bg-gray-dark flex flex-col justify-start pt-7 items-center">
+      <div className="bg-blue w-[70%] flex flex-col justify-center items-center rounded-xl">
+        <h1 className=" p-4">User Details</h1>
+        <div className="flex flex-col justify-center items-center text-center">
+          <img src={user.avatar} alt={`avatar-${user.id}`} className="rounded-3xl"/>
+          <div className=" p-4">
+              <h2>{`${user.first_name} ${user.last_name}`}</h2>
+              <p>{user.email}</p>
+          </div>
         </div>
       </div>
     </div>

@@ -27,15 +27,15 @@ export function Users({users}) {
   }
 
   return (
-    <ul className=" flex flex-col min-w-[80%] ">
+    <ul className=" flex flex-col min-w-[50%] md:min-w-[80%] ">
        {
          users.map(user => (
-          <li key={user.id} onClick={()=> ruta(user.id)} className=" flex flex-row-reverse justify-between mb-5 p-4 min-w-full border-[1px] border-gray-light border-opacity-20 hover:bg-gray hover:bg-opacity-70 cursor-pointer">
-            <div className="text-gray-light flex flex-col justify-center">
+          <li key={user.id} onClick={()=> ruta(user.id)} className=" flex flex-col-reverse md:flex-row-reverse items-center justify-between mb-5 p-4 min-w-full border-[1px] border-gray-light border-opacity-20 hover:bg-gray hover:bg-opacity-70 cursor-pointer">
+            <div className="text-gray-light flex flex-col justify-center mt-5 md:mt-0 lg:mt-0">
               <h2>{`${user.id}-${user.first_name} ${user.last_name}`}</h2>
               <p>{user.email}</p>
             </div>
-            <img src={user.avatar} alt={`avatar-${user.id}`} className=" rounded-full"/>
+            <img src={user.avatar} alt={`avatar-${user.id}`} className=" max-w-[50%] rounded-full"/>
           </li>
          ))   
        }
