@@ -1,5 +1,6 @@
 "use client"
 import React, { useEffect, useState } from 'react';
+import Image from 'next/image';
 import axios from 'axios';
 import {v4 as uuidv4} from 'uuid';
 
@@ -46,6 +47,14 @@ export function FlagApp() {
     const [selectedCountry, setSelectedCountry] = useState();
     console.log('selected country', selectedCountry)
 
+    const searchSelectedCountry = countries.find((obj)=>{
+        if (obj.name.common === selectedCountry ) {
+            return true;
+        }
+        return false;
+    })
+    console.log('searchSelectedCountry', searchSelectedCountry)
+
 
   return (
         <section className='w-[80%]'>
@@ -65,7 +74,7 @@ export function FlagApp() {
                                 onClick={(e)=> setSelectedCountry(e.target.value)} 
                                 className='w-full py-4 text-[18px] rounded-lg md:text-2xl'
                             >
-                                {/* <option>--select country--</option> */}
+                                <option>--select country--</option>
                                 {
                                     countries.map((item)=>{
                                         return (
@@ -79,7 +88,13 @@ export function FlagApp() {
                         </div>
 
                         <div>
-                            <div>1</div>
+                            <div>
+                                <Image 
+                                    width={50}
+                                    height={50}
+                                src={searchSelectedCountry && searchSelectedCountry.flags.png} alt='flag'/>
+                                {/* <p>{searchSelectedCountry && searchSelectedCountry.name.common}</p> */}
+                            </div>
                             <div>2</div>
                             <div>3</div>
                         </div>
