@@ -12,8 +12,8 @@ export default function AboutPage() {
             quibusdam maxime soluta numquam est ipsam omnis?
           </p>
         </div>
-        <div className=" w-[80%] flex justify-center">
-            <FlagApp/>
+        <div className=" w-[80%] flex justify-center bg-blue">
+            <PhoneValidation/>
         </div>
       </div>
   )
