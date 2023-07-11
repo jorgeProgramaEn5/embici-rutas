@@ -13,7 +13,7 @@ export default function AboutPage() {
           </p>
         </div>
         <div className=" w-[80%] flex justify-center bg-blue">
-            <PhoneValidation/>
+            <FlagApp/>
         </div>
       </div>
   )
