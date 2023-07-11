@@ -44,7 +44,7 @@ export function FlagApp() {
         // console.log('countries', countries);
         // console.log('errorMessage', errorMessage);
     
-    const [selectedCountry, setSelectedCountry] = useState();
+    const [selectedCountry, setSelectedCountry] = useState('');
     console.log('selected country', selectedCountry)
 
     const searchSelectedCountry = countries.find((obj)=>{
@@ -92,7 +92,7 @@ export function FlagApp() {
                                 {
                                     countries.map((item)=>{
                                         return (
-                                            <option key={item.name.common} value={item.name.common}>
+                                            <option key={uuidv4()} value={item.name.common}>
                                                 {item.name.common}
                                             </option>
                                         )
@@ -101,16 +101,23 @@ export function FlagApp() {
                             </select>
                         </div>
 
-                        <div>
-                            <div>
+                        <div className='flex space-x-4 mt-3'>
+                            <div className=' border-b-2 border-gray-dark'>
                                 <Image 
-                                    width={50}
-                                    height={50}
+                                    width={40}
+                                    height={40}
                                 src={searchSelectedCountry && searchSelectedCountry.flags.png} alt='flag'/>
                                 {/* <p>{searchSelectedCountry && searchSelectedCountry.name.common}</p> */}
                             </div>
-                            <div>2</div>
-                            <div>3</div>
+                            <div className=' border-b-2 border-gray-dark'>
+                                <p>
+                                    {searchSelectedCountry && searchSelectedCountry.idd.root}
+                                    {searchSelectedCountry && searchSelectedCountry.idd.suffixes}
+                                </p>
+                            </div>
+                            <div className=' border-b-2 border-gray-dark'>
+                                <input type="tel" placeholder='phone' className=' bg-opacity-0' />
+                            </div>
                         </div>
                     </div>
                 </div>
