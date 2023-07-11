@@ -92,7 +92,7 @@ export function FlagApp() {
                                 {
                                     countries.map((item)=>{
                                         return (
-                                            <option key={uuidv4()} value={item.name.common}>
+                                            <option key={item.name.common} value={item.name.common}>
                                                 {item.name.common}
                                             </option>
                                         )
