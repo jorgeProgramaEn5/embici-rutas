@@ -55,6 +55,19 @@ export function FlagApp() {
     })
     console.log('searchSelectedCountry', searchSelectedCountry)
 
+    const handleSelectChange = (event) => {
+        setSelectedCountry(event.target.value);
+    };
+
+    const handleSelectBlur = () => {
+        // Si el valor seleccionado no ha cambiado, no hay necesidad de actualizarlo
+        if (selectedCountry === event.target.value) {
+          return;
+        }
+    
+        setSelectedCountry(event.target.value);
+      };
+      
 
   return (
         <section className='w-[80%]'>
@@ -71,7 +84,8 @@ export function FlagApp() {
                         <div className=' w-full'>
                             <select
                                 value={selectedCountry}
-                                onClick={(e)=> setSelectedCountry(e.target.value)} 
+                                onClick={handleSelectChange} 
+                                onBlur={handleSelectBlur}
                                 className='w-full py-4 text-[18px] rounded-lg md:text-2xl'
                             >
                                 <option>--select country--</option>
