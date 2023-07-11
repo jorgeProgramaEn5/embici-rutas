@@ -1,4 +1,5 @@
-import { FlagApp } from "@/components/FlagApp"
+import { FlagApp } from "@/components/FlagApp";
+import { PhoneValidation } from "@/components/PhoneValidation";
 
 export default function AboutPage() {
   return (

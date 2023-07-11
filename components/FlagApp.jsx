@@ -84,7 +84,7 @@ export function FlagApp() {
                         <div className=' w-full'>
                             <select
                                 value={selectedCountry}
-                                onClick={handleSelectChange} 
+                                onChange={handleSelectChange} 
                                 onBlur={handleSelectBlur}
                                 className='w-full py-4 text-[18px] rounded-lg md:text-2xl'
                             >
@@ -100,24 +100,27 @@ export function FlagApp() {
                                 }
                             </select>
                         </div>
-
-                        <div className='flex space-x-4 mt-3'>
-                            <div className=' border-b-2 border-gray-dark'>
-                                <Image 
-                                    width={40}
-                                    height={40}
-                                    src={searchSelectedCountry && searchSelectedCountry.flags.png} alt='flag'/>
-                                {/* <p>{searchSelectedCountry && searchSelectedCountry.name.common}</p> */}
+                        <div>
+                            { searchSelectedCountry && (
+                            <div className='flex space-x-4 mt-3'>
+                                <div className=' border-b-2 border-gray-dark'>
+                                    <Image 
+                                        width={40}
+                                        height={40}
+                                        src={searchSelectedCountry && searchSelectedCountry.flags.png} alt='flag'/>
+                                    {/* <p>{searchSelectedCountry && searchSelectedCountry.name.common}</p> */}
+                                </div>
+                                <div className=' border-b-2 border-gray-dark'>
+                                    <p>
+                                        {searchSelectedCountry && searchSelectedCountry.idd.root}
+                                        {searchSelectedCountry && searchSelectedCountry.idd.suffixes}
+                                    </p>
+                                </div>
+                                <div className=' border-b-2 border-gray-dark'>
+                                    <input type="tel" placeholder='phone' className=' w-full' />
+                                </div>
                             </div>
-                            <div className=' border-b-2 border-gray-dark'>
-                                <p>
-                                    {searchSelectedCountry && searchSelectedCountry.idd.root}
-                                    {searchSelectedCountry && searchSelectedCountry.idd.suffixes}
-                                </p>
-                            </div>
-                            <div className=' border-b-2 border-gray-dark'>
-                                <input type="tel" placeholder='phone' className=' w-full' />
-                            </div>
+                            )}
                         </div>
                     </div>
                 </div>
