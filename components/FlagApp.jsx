@@ -44,7 +44,7 @@ export function FlagApp() {
         // console.log('countries', countries);
         // console.log('errorMessage', errorMessage);
     
-    const [selectedCountry, setSelectedCountry] = useState('');
+    const [selectedCountry, setSelectedCountry] = useState('select country');
     console.log('selected country', selectedCountry)
 
     const searchSelectedCountry = countries.find((obj)=>{
@@ -88,7 +88,7 @@ export function FlagApp() {
                                 onBlur={handleSelectBlur}
                                 className='w-full py-4 text-[18px] rounded-lg md:text-2xl'
                             >
-                                {/* <option>--select country--</option> */}
+                                <option value=''>select country</option>
                                 {
                                     countries.map((item)=>{
                                         return (
@@ -106,7 +106,7 @@ export function FlagApp() {
                                 <Image 
                                     width={40}
                                     height={40}
-                                src={searchSelectedCountry && searchSelectedCountry.flags.png} alt='flag'/>
+                                    src={searchSelectedCountry && searchSelectedCountry.flags.png} alt='flag'/>
                                 {/* <p>{searchSelectedCountry && searchSelectedCountry.name.common}</p> */}
                             </div>
                             <div className=' border-b-2 border-gray-dark'>
@@ -116,7 +116,7 @@ export function FlagApp() {
                                 </p>
                             </div>
                             <div className=' border-b-2 border-gray-dark'>
-                                <input type="tel" placeholder='phone' className=' bg-opacity-0' />
+                                <input type="tel" placeholder='phone' className=' w-full' />
                             </div>
                         </div>
                     </div>
