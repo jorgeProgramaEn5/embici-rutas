@@ -65,7 +65,7 @@ export function FlagApp() {
                                 onClick={(e)=> setSelectedCountry(e.target.value)} 
                                 className='w-full py-4 text-[18px] rounded-lg md:text-2xl'
                             >
-                                <option>--select country--</option>
+                                {/* <option>--select country--</option> */}
                                 {
                                     countries.map((item)=>{
                                         return (
