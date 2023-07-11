@@ -1,3 +1,4 @@
+import { FlagApp } from "@/components/FlagApp"
 
 export default function AboutPage() {
   return (
@@ -9,6 +10,9 @@ export default function AboutPage() {
             vel, eius perspiciatis excepturi cumque sit praesentium iste, 
             quibusdam maxime soluta numquam est ipsam omnis?
           </p>
+        </div>
+        <div className=" w-[80%] flex justify-center">
+            <FlagApp/>
         </div>
       </div>
   )
