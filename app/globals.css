@@ -25,3 +25,12 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
+.lottie{
+  width: 70px;
+  height: 70px;
+}
+.lottie svg{
+  width: 100% !important;
+  height: 100% !important;
+  cursor: pointer;
+}
