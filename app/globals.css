@@ -25,6 +25,11 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
+
+body {
+  background-color: #181a2A;
+}
+
 .lottie{
   width: 70px;
   height: 70px;

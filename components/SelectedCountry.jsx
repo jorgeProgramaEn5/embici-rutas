@@ -44,7 +44,7 @@ export function SelectedCountry() {
         // console.log('errorMessage', errorMessage);
     
     const [selectedCountry, setSelectedCountry] = useState();
-    console.log('selected country', selectedCountry)
+    // console.log('selected country', selectedCountry)
 
 
   return (
