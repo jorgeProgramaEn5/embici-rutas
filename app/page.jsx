@@ -1,4 +1,4 @@
-// import {Header} from '@/components/Header';
+import Header from '@/components/Header';
 import Header3 from '@/components/Header3';
 
 // async function fetchUsers(){
@@ -12,8 +12,8 @@ export default async function IndexPage() {
   // const user = data.data;
   return (
     <div className=''>
-      {/* <Header/> */}
-      <Header3/>
+      <Header/>
+      {/* <Header3/> */}
     </div>
   )
 }

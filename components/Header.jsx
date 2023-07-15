@@ -5,10 +5,10 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import axios from 'axios';
-import { defaults } from 'autoprefixer';
+// import { defaults } from 'autoprefixer';
 
 export const Header = () => {
-  // const [data, setData] = useState([]);
+  const [datas, setDatas] = useState([]);
 
   const settings = {
       dots: true,
@@ -18,48 +18,30 @@ export const Header = () => {
       slidesToScroll: 1
   };
 
-  // useEffect(()=>{
-  //   const fetchData = async ()=>{
-  //     const data = await axios.get("http://localhost:1337/api/banners?populate=*");
-  //     let response = data.data.data;
-  //     console.log(response);
-  //   };
+  useEffect(()=>{
+    const fetchData = async ()=>{
+      const response = await axios.get("http://localhost:1337/api/banners?populate=*");
+      setDatas(response.data.data);
+      console.log(response.data.data);
+    };
 
-  //   fetchData();
-  // }, []);
+    fetchData();
+  }, []);
 
-    
-
-  
+  // console.log(datas);
     
   return (
     <div className='header'>
         <div className='overflow-hidden max-h-[575px] container mx-auto max-w-7xl'>
-            {/* <Slider {...settings}> */}
-              {/* {
-                data.map(item =>{
-                  // <img src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} alt='banner' />
-                  <h1>{item.data.first_name}</h1>
-                })
-              } */}
-            {/* </Slider> */}
+              {
+                datas.map((item) =>(
+                  <img key={item.id} src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} alt='banner' />
+                ))
+              } 
         </div>
       </div>
   )
 }
 
 
-export async function getServerSideProps() {
-
-  const response = await fetch("https://reqres.in/api/users?page=2");
-  const data = await response.json();
-
-
-  return {
-    props: {
-
-    }
-  }
-}
-
-// export default Header
+export default Header
