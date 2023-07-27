@@ -2,13 +2,9 @@
 import axios from 'axios';
 
 const fetchData = ()=> {
-    return fetch('https://jsonplaceholder.typicode.com/posts', {
-        next: {
-            revalidate: 60
-        }
-    })
-      .then(res => res.json())
-      .catch(console.log("upss fetching error"))
+    return fetch('https://jsonplaceholder.typicode.com/posts', {next: {revalidate: 60}})
+    .then(res => res.json())
+    .catch(console.log("upss fetching error"))
 }
 
 // const fetchData = ()=> {
@@ -39,3 +35,9 @@ const Header2 = async () => {
 
   
 export default Header2;
+
+
+// Esta variante es como se recomienda en un curso que vi, de como hacer un feching de datos en nextjs. Solo que
+// cuando hacia la peticion en el servidor. Solo que cuando lo utilizo para pedir datos a strapi desede el 
+// loclahost:1773, si lo hago del lado del servidor, no se piden y si lo hago del lado del cliente next se vuelve loco 
+// y empieza a mandar miles de solicitudes

@@ -23,7 +23,7 @@ export function Navigation() {
                 <div className="lg:flex lg:gap-x-12">
                     <Link href="/team" className="text-sm md:mr-4 mr-2 font-semibold leading-6 text-gray-900">Our Team</Link>
                     <Link href="/about" className="text-sm md:mr-4 mr-2 font-semibold leading-6 text-gray-900">About</Link>
-                    <Link href="/services" className="text-sm font-semibold leading-6 text-gray-900">Services</Link>
+                    <Link href="/products" className="text-sm font-semibold leading-6 text-gray-900">Products</Link>
                 </div>
             </nav>
         </div>

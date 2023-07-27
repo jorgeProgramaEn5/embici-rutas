@@ -13,9 +13,12 @@ export const Header = () => {
   const settings = {
       dots: true,
       infinite: true,
+      fade: true,
       speed: 500,
       slidesToShow: 1,
-      slidesToScroll: 1
+      slidesToScroll: 1,
+      autoplay: true,
+      autoplaySpeed: 5000,
   };
 
   useEffect(()=>{
@@ -32,14 +35,16 @@ export const Header = () => {
     
   return (
     <div className='header'>
-        <div className='overflow-hidden max-h-[575px] container mx-auto max-w-7xl'>
-              {
-                datas.map((item) =>(
-                  <img key={item.id} src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} alt='banner' />
-                ))
-              } 
-        </div>
+      <div className='overflow-hidden max-h-[175px] lg:max-h-[575px] container mx-auto max-w-7xl'>
+        <Slider {...settings}>
+          {
+            datas?.map((item) =>(
+              <img key={item.id} src={`http://localhost:1337${item.attributes.image.data.attributes.url}`} alt='banner' />
+            ))
+          }
+        </Slider> 
       </div>
+    </div>
   )
 }
 
